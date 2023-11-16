@@ -13,7 +13,11 @@ const audioPlay = document.createElement('audio');
 audioPlay.controls = true;
 audioPlayers.appendChild(audioPlay)
 
-// })
+// const playButton = document.createElement('button');
+// playButton.classList.add('playBack');
+// playButton.textContent = 'PLAY';
+// playButton.dataset.id = result.trackId;
+
 
 userInput.addEventListener("click", (event) => {
     event.preventDefault();
@@ -32,21 +36,34 @@ userInput.addEventListener("click", (event) => {
 <div class="artist">${result.artistName} </div>
 <div class= "track">${result.trackName}</div>
 <img id="player" src= ${result.artworkUrl100.replace("100x100", "280x280")}></div>
-<button class="playBack" id="playSong">PLAY</button> 
+<button class="playBack" id="playback" dataset-id =${result.trackId}>PLAY</button> 
 </div>
-`;
-                const audio = document.getElementById("playSong");
-                audio.addEventListener('click', function (event) {
+`
 
-                    let target = event.target;
+const audio = document.getElementById("playback");
+console.log(audio)
+audio.addEventListener('click', function (event) {
+    event.preventDefault();
+    audioPlay.src = result.previewUrl;
+})
 
-                    songSelected(target)
 
-                    function songSelected() {
-                        audioPlay.src = result.previewUrl;
-                    }
+// const audio = document.getElementById("playback");
+// audio.addEventListener('click', function (event) {
 
-                })
+//     let target = event.target;
+
+//     songSelected(target)
+//     // for (let i = 0; i < audio.length; i++) {
+
+//     // }
+//     console.log('audio')
+//     console.log('target')
+//     function songSelected() {
+//         audioPlay.src = result.previewUrl;
+//     }
+   
+// })
             });
 
 
@@ -56,3 +73,84 @@ userInput.addEventListener("click", (event) => {
 
 
 });
+
+
+// artistResult.appendChild(playButton);
+// const audio = document.getElementById("playSong");
+// audio.addEventListener('click', () => {
+//     console.log(audio)
+//   
+//      ${result.trackId}`);
+// });
+//  const playButtons = document.querySelectorAll('.playBack');
+//  playButtons.forEach(button) =>{
+//     button.addEventListener()
+//  }
+// });
+// const audio = document.getElementById("playback");
+// console.log(audio)
+// audio.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     audioPlay.src = result.previewUrl;
+// })
+
+
+
+// const audio = document.getElementById("playSong");
+// audio.addEventListener('click', function (event) {
+
+//     let target = event.target;
+
+//     songSelected(target)
+//     for (let i = 0; i < audio.length; i++) {
+
+//     }
+//     function songSelected() {
+//         audioPlay.src = result.previewUrl;
+//     }
+//     // audioPlay.src = result.previewUrl;
+//     // audioPlay.src = result.previewUrl;
+// })
+// {/*  */}
+
+     // const audio = document.getElementById("playSong");
+                // audio.addEventListener('click', function (event) {
+
+                //     let target = event.target;
+
+                //     songSelected(target)
+                //     for (let i = 0; i < audio.length; i++) {
+
+                //     }
+                //     function songSelected() {
+                //         audioPlay.src = result.previewUrl;
+                //     }
+                //     // audioPlay.src = result.previewUrl;
+                //     // audioPlay.src = result.previewUrl;
+                // })
+                // for (let i = 0; i < audio.length; i++) {
+                // audio.addEventListener("click", () => {
+                // audioPlay.src = result.previewUrl;
+
+                // 
+                // document.addEventListener("DOMContentLoaded", (event) => {
+                    // const audio = document.getElementById("playback");
+                    // for (let i = 0; i < audio.length; i++) {
+                    //     audio.addEventListener('click', function (event) {
+                    //         event.preventDefault();
+    
+    
+    
+                    //         // audioPlay.src = result.previewUrl;
+                    //         // })
+                    //         let target = event.target;
+    
+                    //         songSelected(target)
+    
+                    //         console.log(audio)
+                    //         function songSelected() {
+                    //             audioPlay.src = result.previewUrl;
+                    //         }
+    
+                    //     });
+                    // }
