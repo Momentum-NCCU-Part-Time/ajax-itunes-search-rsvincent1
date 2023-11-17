@@ -11,6 +11,7 @@ const audioPlayers = document.getElementById("pinnedAudio")
 const audioPlay = document.createElement('audio');
 
 audioPlay.controls = true;
+audioPlay.setAttribute('autoplay', "")
 audioPlayers.appendChild(audioPlay)
 
 // const playButton = document.createElement('button');
@@ -36,17 +37,29 @@ userInput.addEventListener("click", (event) => {
 <div class="artist">${result.artistName} </div>
 <div class= "track">${result.trackName}</div>
 <img id="player" src= ${result.artworkUrl100.replace("100x100", "280x280")}></div>
-<button class="playBack" id="playback" dataset-id =${result.trackId}>PLAY</button> 
+<button class="playBack" data-id =${result.previewUrl}>PLAY</button> 
 </div>
 `
 
-const audio = document.getElementById("playback");
+const audio = document.querySelectorAll(".playBack");
 console.log(audio)
-audio.addEventListener('click', function (event) {
+for (let a of audio ) {
+    a.addEventListener('click', function (event) {
     event.preventDefault();
-    audioPlay.src = result.previewUrl;
+    console.log(event.target)
+    audioPlay.src = event.target.dataset.id;
 })
+}
 
+            });
+
+
+
+        });
+
+
+
+});
 
 // const audio = document.getElementById("playback");
 // audio.addEventListener('click', function (event) {
@@ -64,15 +77,7 @@ audio.addEventListener('click', function (event) {
 //     }
    
 // })
-            });
 
-
-
-        });
-
-
-
-});
 
 
 // artistResult.appendChild(playButton);
