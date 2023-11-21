@@ -23,9 +23,9 @@ userInput.addEventListener("click", (event) => {
         artistResult.innerHTML += `
                
                     <div class="audioContainter" id="content" data-id="song">
+<img id="player" src= ${result.artworkUrl100.replace("100x100", "280x280")}>
 <div class="artist">${result.artistName} </div>
 <div class= "track">${result.trackName}</div>
-<img id="player" src= ${result.artworkUrl100.replace("100x100", "280x280")}>
 <button class="playBack" data-id =${result.previewUrl}>PLAY</button> 
 </div>
 `;

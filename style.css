@@ -3,6 +3,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  column-gap: 2%;
+  row-gap: 12px;
 }
-.playBack {
+.pinnedTrack {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+#userInput {
+  display: flex;
+  justify-content: center;
+}
+
+#displayTrack {
+  display: flex;
+  justify-content: space-around;
+  font-style: oblique;
 }
